@@ -22,20 +22,23 @@ let veinte = document.getElementById("veinte");
 
 //CREAR ARRAYS 
 
-let imagenes = [uno, dos, tres, cuatro,cinco,seis,siete,ocho,nueve,diez,once,doce,trece,catorce,quince,dieciseis,diecisiete,dieciocho,diecinueve,veinte];
-let paths = [".IMG/ardilla.png",".IMG/cerdo.png",".IMG/conejo.png",".IMG/elefante.png",".IMG/erizo.png", ".IMG/jirafa.png",".IMG/oso-panda.png", ".IMG/oveja.png", ".IMG/vaca.png",".IMG/zorro.png",".IMG/ardilla.png",".IMG/cerdo.png",".IMG/conejo.png",".IMG/elefante.png",".IMG/erizo.png", ".IMG/jirafa.png",".IMG/oso-panda.png", ".IMG/oveja.png", ".IMG/vaca.png",".IMG/zorro.png"];
+
+let imagenes = [uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez, once, doce, trece, catorce, quince, dieciseis, diecisiete, dieciocho, diecinueve, veinte];
+let paths = ["IMG/ardilla.png", "IMG/cerdo.png", "IMG/conejo.png", "IMG/elefante.png", "IMG/erizo.png", "IMG/jirafa.png", "IMG/oso-panda.png", "IMG/oveja.png", "IMG/vaca.png", "IMG/zorro.png", "IMG/ardilla.png", "IMG/cerdo.png", "IMG/conejo.png", "IMG/elefante.png", "IMG/erizo.png", "IMG/jirafa.png", "IMG/oso-panda.png", "IMG/oveja.png", "IMG/vaca.png", "IMG/zorro.png"];
 // CREAMOS UN ARRAY CON LAS IMG
+
 
 function barajar(array) {
     
+
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
-   
 
-   // return arrayBarajado;
+    // return arrayBarajado;
 }
+
 
 function asignarFoto(array1,array2){
     let barajado = imagenes;
@@ -47,9 +50,35 @@ function asignarFoto(array1,array2){
 
 barajar(paths);
 
-asignarFoto(imagenes,paths);
+asignarFoto(imagenes, paths);
 console.log(imagenes);
 
 
+// CONTADOR DE ACIERTOS 
+let boton = document.getElementById("aciertos");
+boton.addEventListener("click", sumarAciertos);
 
+// CONTADOR DE ACIERTOS
+let contadorAciertos = 0;
 
+// FUNCION SUMAR ACIERTOS
+function sumarAciertos() {
+
+    let parrafo = document.getElementById("aciertosMostrar");
+    parrafo.setAttribute("class","forma-h2");
+        
+    if (contadorAciertos < 10) {
+        contadorAciertos++;
+    }
+
+    let aciertos = "Aciertos ";
+    for (let i = 0; i < 10; i++) {
+        aciertos += (i < contadorAciertos) ? "🟢" : "⚪";
+    }
+
+    parrafo.innerHTML = aciertos;
+
+    //}   // if
+}
+asignarFoto(imagenes,paths);
+console.log(imagenes);
