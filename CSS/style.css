@@ -32,3 +32,45 @@ img{
     padding: 5px;
     border-radius: 5px;
 }
+
+.mostrarFondo{
+    opacity: 100%;
+}
+
+.quitarFondo{
+    opacity: 0%;
+}
+
+.fijo {
+    opacity: 100%;
+    pointer-events: none; /* Para que no se puedan volver a seleccionar */
+}
+
+.fondo{
+    background-color: green;
+}
+
+.boton{
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+td:hover{
+    cursor: pointer;
+}
+
+.sombra{
+    border: 3px solid yellow;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: darkblue;
+}
+
+td:hover{
+    border: 2px solid yellow;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: darkblue;
+}
